@@ -1,0 +1,417 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #262626;
+}
+
+.movies_info,
+.tv_info {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #333333;
+    width: 45%;
+    height: 90%;
+    /* height: auto; */
+    color: white;
+    overflow-y: scroll;
+    display: none;
+}
+
+img.cover_img {
+    width: 100%;
+    height: auto;
+}
+
+.cover_image_container {
+    position: relative;
+    height: auto;
+    width: 100%;
+}
+
+.box-shadow {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: 0px -10px 45px 10px #bfbfbf inset;
+}
+
+.movie_details {
+    padding: 10px;
+    margin: 10px 14px;
+}
+
+li {
+    /* text-align: center; */
+    margin: 15px;
+    color: black;
+    border-radius: 7px;
+    display: inline-block;
+    background-color: whitesmoke;
+    text-decoration: none;
+}
+
+ul.cast {
+    /* display: inline-block; */
+    margin: 25px 0px;
+    padding: 20px 10px;
+    white-space: nowrap;
+    /*list elements in a single line. */
+    overflow-y: hidden;
+    overflow-x: scroll;
+    font-family: "Lato", sans-serif;
+    font-size: 14px;
+}
+
+.cast_list {
+    white-space: normal;
+    height: 265px;
+    width: 138px;
+}
+
+/* wrap the word  to next line if it exceeds the given width value */
+.char_description {
+    display: flex;
+    flex-direction: column;
+    padding-left: 5px;
+}
+
+/* #movie_info_conatiner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    } */
+
+/*cross iscon using Font awesome*/
+/* .icon::before {
+        display: inline-block;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .movies_info::before {
+        font-family: "Font Awesome 5 Free";
+        font-weight: 400;
+        content: "\f00d";
+        color: red;
+    } */
+#cross_icon {
+    color: #23aaf2;
+    font-size: 18px;
+    position: fixed;
+    display: block;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    background: #333333;
+    padding: 10px;
+    border-radius: 50%;
+    opacity: 0.7;
+    transition: 0.5s all ease;
+}
+
+#cross_icon:hover {
+    opacity: 1;
+}
+
+.backdrops,
+.backdrops_tv {
+    position: relative;
+    margin: 12px 17.5%;
+}
+
+span.span_movie_details_headings {
+    font-weight: 600;
+    font-size: 17px;
+    font-family: "Lato", sans-serif;
+    font-family: "Poppins", sans-serif;
+}
+
+.p_movie_details {
+    font-family: "Lato", sans-serif;
+    font-size: 15.5px;
+}
+
+span.genre_name {
+    display: inline-block;
+    background: #23aaf2;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+span.movie_rating {
+    display: inline-block;
+    background: #00e600;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+p.movie_name {
+    position: relative;
+    margin-top: -60px;
+    margin-bottom: 35px;
+    font-family: cursive;
+    font-size: 27px;
+    font-weight: bold;
+}
+
+img {
+    border: none;
+}
+
+img.profile_pics {
+    border-radius: 7px 7px 0px 0px;
+}
+
+.characters {
+    font-size: 11px;
+    color: #333333;
+}
+
+.backdrops img {
+    display: block;
+}
+
+.backdrops_tv img {
+    display: block;
+}
+
+img.movie_posters {
+    border-radius: 15px;
+    display: inline-block;
+    transition: 0.5s;
+    width: 200px;
+    height: 300px;
+}
+
+.movie_posters_conatiner {
+    border-radius: 15px;
+    margin: 20px 0px 10px 30px;
+    width: 200px;
+    height: 300px;
+    display: inline-block;
+    overflow: hidden;
+}
+
+img.movie_posters_conatiner {
+    width: 100%;
+    height: 100%;
+    transition: 0.5s all ease;
+}
+
+.movie_posters_conatiner:hover .movie_posters,
+.movie_posters_conatiner:focus .movie_posters {
+    transform: scale(1.2);
+}
+
+/*overriding jquery UI*/
+.ui-tabs .ui-tabs-nav li {
+    background: transparent;
+    border: 1px solid white;
+    border-radius: 20px;
+    margin: 40px 0px 20px 42px;
+    height: auto;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    border-color: #23aaf2;
+    transition: 0.5s all ease;
+    outline: none;
+}
+
+.ui-tabs .ui-tabs-nav {
+    background: #262626;
+    border: none;
+}
+
+#tabs {
+    background: #262626;
+    border: none;
+}
+
+span {
+    color: whitesmoke;
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-active {
+    background-color: #23aaf2;
+    background-image: linear-gradient(
+        to right,
+        #23aaf2,
+        #2199d9,
+        #1f88c1,
+        #1d78aa,
+        #1b6893
+    );
+}
+
+.ui-tabs .ui-tabs-nav li:hover {
+    background-color: #23aaf2;
+    background-image: linear-gradient(
+        to right,
+        #23aaf2,
+        #2199d9,
+        #1f88c1,
+        #1d78aa,
+        #1b6893
+    );
+}
+
+.ui-tabs-anchor {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+a {
+    outline: none;
+}
+
+#movies_tab,
+#tv_tab {
+    color: whitesmoke;
+}
+
+input[type="text"] {
+    position: relative;
+    display: block;
+    width: 90%;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    outline: none;
+    background: none;
+    border-bottom: 1px solid white;
+    margin: 50px auto 20px;
+    transition: 0.5s ease-in-out;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    font-family: "Lato", sans-serif;
+    caret-color: #23aaf2;
+    /*change the colour of the cursor */
+}
+
+input[type="text"]:focus {
+    border-bottom: 2px solid #23aaf2;
+}
+
+p.blank_input {
+    padding-left: 30px;
+}
+
+#tag_line {
+    font-size: 32px;
+    text-align: center;
+    padding: 10px;
+    margin: 40px 0px 15px;
+    font-family: "Poppins", sans-serif;
+    color: white;
+}
+
+#logo {
+    position: relative;
+    margin-top: 6px;
+    margin-left: 10px;
+    width: 40px;
+    height: auto;
+}
+
+.navbar {
+    top: 0;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 14% 7% 7%;
+    /*fr:fraction to take up the remaning leftover space */
+    grid-template-rows: 53px;
+    column-gap: 10px;
+    justify-content: end;
+    padding: 0 10px;
+    background-color: #282a39;
+    text-align: center;
+    box-shadow: 0px 1px 10px 1px #23aaf2;
+}
+
+.navbar > span,
+.navbar a {
+    margin-top: 7px;
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 14px;
+    font-family: "Lato", sans-serif;
+}
+
+#logout_btn {
+    width: 100px;
+    height: 35px;
+    padding: 6px;
+    margin-top: 12px;
+    border-radius: 30px;
+    background-color: #23aaf2;
+    font-size: 16px;
+    background-image: linear-gradient(
+        to right,
+        #23aaf2,
+        #2199d9,
+        #1f88c1,
+        #1d78aa,
+        #1b6893
+    );
+}
+
+.add_list_icon {
+    color: #23aaf2;
+    font-size: 22px;
+    position: fixed;
+    display: block;
+    top: 0px;
+    left: 0px;
+    cursor: pointer;
+    background: transparent;
+    padding: 10px;
+    outline: none;
+    border: none;
+    transition: 0.5s all ease;
+}
+
+button.add_list_icon {
+    display: block;
+}
+
+#mail_btn {
+    cursor: pointer;
+    width: 100px;
+    height: 35px;
+    padding: 6px;
+    margin-top: 12px;
+    border-radius: 30px;
+    background-color: #23aaf2;
+    border: none;
+    outline: none;
+    background-image: linear-gradient(
+        to right,
+        #23aaf2,
+        #2199d9,
+        #1f88c1,
+        #1d78aa,
+        #1b6893
+    );
+}
+
+#mail_icon {
+    color: yellow;
+    font-size: 18px;
+}

@@ -1,0 +1,240 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    height: 100vh;
+}
+body {
+    height: 100vh;
+    background: #c900cc; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+        to right top,
+        #00dbde,
+        #c900cc
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+        to right top,
+        #00dbde,
+        #c900cc
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+body,
+input,
+button {
+    font-family: "Ubuntu", sans-serif;
+}
+.form_container {
+    /* margin: 10% auto; */
+    top: 12vh;
+    margin: 0 auto;
+    background-color: white;
+    padding: 10px;
+    position: relative;
+    width: 400px;
+    height: 470px;
+    background-color: #333333;
+    box-shadow: 9px 9px 8px #404040;
+    transition: all 0.3s ease-in;
+    border-radius: 7px;
+}
+
+span.heading {
+    font-family: "Piedra", cursive;
+    text-align: center;
+    display: block;
+    font-size: 25px;
+    margin-top: 20px;
+    background-image: linear-gradient(
+        to right,
+        #63c8ff,
+        #4ea6d6,
+        #3984af,
+        #246589,
+        #0e4765
+    );
+    text-transform: uppercase;
+    background: linear-gradient(to right, #30cfd0 0%, #330867 100%);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#create_form {
+    width: 80%;
+    height: auto;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 25px 15px;
+}
+input {
+    width: 100%;
+    border-bottom: 1px solid #d9d9d9;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    outline: none;
+    background: transparent;
+    margin: 20px 0px;
+    color: #f2f2f2;
+    transition: all 0.1s ease-in-out;
+    padding-right: 22px; /*to prevent text overlapping the eye icon*/
+}
+
+input:focus {
+    border-bottom: 2px solid #0b81c1;
+}
+#eye_slash {
+    position: absolute;
+    /* margin: 25px 0px; */
+    color: #23aaf2;
+    right: 5%;
+    top: 50%;
+}
+.create_btn {
+    margin: 30px auto;
+    width: 70%;
+    height: 38px;
+    outline: none;
+    background: transparent;
+    padding: 5px 25px;
+    display: block;
+    cursor: pointer;
+    border-radius: 20px;
+    background-image: linear-gradient(
+        to right bottom,
+        #004f7a,
+        #0a6497,
+        #147bb4,
+        #1c92d3,
+        #23aaf2
+    );
+    border: none;
+}
+button:focus {
+    outline: 0;
+}
+
+/*error message*/
+span.alert {
+    font-size: 13px;
+    color: red;
+    /* font-size: 13px; */
+    display: block;
+    background-color: #ffb3b3;
+    border: 2px solid red;
+    border-radius: 3px;
+    text-align: center;
+    padding: 1px 0px;
+    position: absolute;
+    left: 50%;
+    top: 17%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    font-weight: 500;
+}
+
+/*success message*/
+span.alert.success {
+    color: green;
+    border: 2px solid green;
+    background-color: #b3ffb3;
+}
+
+/*responsive for mobile phones*/
+@media (max-width: 500px) {
+    body {
+        height: 100vh;
+    }
+    .form_container {
+        margin: 0 auto;
+        padding: 10px;
+        position: relative;
+        width: 80%;
+        height: auto;
+        min-height: 70%;
+        transition: all 0.3s ease;
+    }
+    .create_btn {
+        margin: 20px auto;
+        width: 80%;
+        padding: 5px 15px;
+    }
+
+    #eye_slash {
+        right: 6%;
+        top: 52%;
+    }
+    span.alert {
+        font-size: 1.73vh;
+    }
+}
+@media (max-width: 350px) and (min-height: 650px) {
+    span {
+        font-size: 18px;
+        margin-top: 20px;
+    }
+    .create_btn {
+        margin: 18px auto;
+        width: 100%;
+        padding: 5px 15px;
+    }
+    #eye_slash {
+        right: 7%;
+        top: 53%;
+        transform: scale(0.85);
+    }
+    span.alert {
+        font-size: 1.73vh;
+    }
+}
+@media (max-width: 320px) and (max-height: 480px) {
+    #eye_slash {
+        right: 2%;
+        top: 47%;
+        transform: scale(0.85);
+    }
+    span.heading {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+    span.alert {
+        font-size: 1.73vh;
+        left: 50%;
+        top: 15%;
+    }
+    input {
+        margin: 10px 0px;
+    }
+    span {
+        font-size: 15px;
+        margin-top: 10px;
+    }
+    #create_form {
+        padding: 15px 5px;
+    }
+}
+/*for iphone 5/SE */
+@media (width: 320px) and (height: 568px) {
+    input {
+        margin: 15px 0px;
+    }
+    #eye_slash {
+        right: 6%;
+        top: 50%;
+        transform: scale(0.85);
+    }
+}
+/*for galaxy fold*/
+@media (max-width: 281px) and (max-height: 654px) {
+    span.heading {
+        font-size: 20px;
+    }
+    span.alert {
+        top: 14%;
+    }
+}
